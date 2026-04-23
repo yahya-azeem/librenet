@@ -21,7 +21,7 @@ The **Unified SaaS Manifest** is the "identity" of your application. It tells th
 
 ## Field Definitions
 *   **`wasm_cid`**: The Content Identifier of your application's binary stored in Librenet Storage.
-*   **`redundancy`**: The "Tasting the Soup" factor. A value of `3` means three independent peers must compute the same result before it is accepted.
+*   **`redundancy`**: The **Optimal Redundancy Factor**. This prevents the "Too Many Chefs" problem by capping the number of peers who can work on a single task. A value of `3` means exactly three independent peers are recruited to "taste the soup". Once $N$ peers claim a job, the network locks it to preserve collective compute equity.
 *   **`needs_gpu`**: Set to `true` for AI inference or graphics rendering tasks. This routes your compute to **Native Compute Providers (NCP)**.
 *   **`shards`**: How many pieces your app's state should be broken into for distribution.
 
