@@ -1,0 +1,12 @@
+C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\ittapi-91a8557547fed967.d: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\collection_control.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\domain.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\event.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\jit.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\string.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\task.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\util.rs
+
+C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\libittapi-91a8557547fed967.rmeta: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\collection_control.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\domain.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\event.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\jit.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\string.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\task.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\util.rs
+
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\lib.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\collection_control.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\domain.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\event.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\jit.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\string.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\task.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ittapi-0.4.0\src\util.rs:

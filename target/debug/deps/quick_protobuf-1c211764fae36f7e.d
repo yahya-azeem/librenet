@@ -1,0 +1,10 @@
+C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\quick_protobuf-1c211764fae36f7e.d: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\errors.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\message.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\reader.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\sizeofs.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\writer.rs
+
+C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\libquick_protobuf-1c211764fae36f7e.rmeta: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\errors.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\message.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\reader.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\sizeofs.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\writer.rs
+
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\lib.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\errors.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\message.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\reader.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\sizeofs.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\quick-protobuf-0.8.1\src\writer.rs:

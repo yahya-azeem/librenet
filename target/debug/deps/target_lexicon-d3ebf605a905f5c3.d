@@ -1,0 +1,13 @@
+C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\target_lexicon-d3ebf605a905f5c3.d: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\data_model.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\host.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\parse_error.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\targets.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\triple.rs C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\build\target-lexicon-b59bec76f93afa47\out/host.rs
+
+C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\libtarget_lexicon-d3ebf605a905f5c3.rmeta: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\data_model.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\host.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\parse_error.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\targets.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\triple.rs C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\build\target-lexicon-b59bec76f93afa47\out/host.rs
+
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\lib.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\data_model.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\host.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\parse_error.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\targets.rs:
+C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\target-lexicon-0.12.16\src\triple.rs:
+C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\build\target-lexicon-b59bec76f93afa47\out/host.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\shama\\.gemini\\antigravity\\scratch\\librenet\\target\\debug\\build\\target-lexicon-b59bec76f93afa47\\out

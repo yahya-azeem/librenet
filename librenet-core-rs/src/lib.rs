@@ -1,9 +1,11 @@
 pub mod swarm;
+pub mod protocol;
 
-use ed25519_dalek::{SigningKey, VerifyingKey};
+pub use ed25519_dalek::{SigningKey, VerifyingKey};
 use rand::rngs::OsRng;
 use rand::RngCore;
 use libp2p::Multiaddr;
+use tokio::sync::mpsc;
 
 /// Represents a peer's identity in the Librenet.
 #[derive(Debug, Clone)]
@@ -32,12 +34,16 @@ impl PeerIdentity {
 pub struct LibrenetNode {
     pub identity: PeerIdentity,
     pub swarm: swarm::LibrenetSwarm,
+    pub incoming_rx: mpsc::UnboundedReceiver<Vec<u8>>,
+    pub outgoing_tx: mpsc::UnboundedSender<Vec<u8>>,
 }
 
 impl LibrenetNode {
     pub async fn new(identity: PeerIdentity) -> Result<Self, Box<dyn std::error::Error>> {
-        let swarm = swarm::LibrenetSwarm::new(identity.to_seed()).await?;
-        Ok(Self { identity, swarm })
+        let (in_tx, in_rx) = mpsc::unbounded_channel();
+        let (out_tx, out_rx) = mpsc::unbounded_channel();
+        let swarm = swarm::LibrenetSwarm::new(identity.to_seed(), in_tx, out_rx).await?;
+        Ok(Self { identity, swarm, incoming_rx: in_rx, outgoing_tx: out_tx })
     }
 
     pub async fn start(&mut self, listen_addr: Multiaddr) -> Result<(), Box<dyn std::error::Error>> {

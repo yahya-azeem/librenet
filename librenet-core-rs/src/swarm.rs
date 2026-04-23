@@ -7,8 +7,8 @@ use libp2p::{
 };
 use std::error::Error;
 use futures::StreamExt;
+use tokio::sync::mpsc;
 
-/// Custom network behavior combining Kademlia and Gossipsub
 #[derive(NetworkBehaviour)]
 pub struct LibrenetBehaviour {
     pub kademlia: kad::Behaviour<kad::store::MemoryStore>,
@@ -18,13 +18,18 @@ pub struct LibrenetBehaviour {
 pub struct LibrenetSwarm {
     pub swarm: Swarm<LibrenetBehaviour>,
     pub peer_id: PeerId,
+    pub incoming_tx: mpsc::UnboundedSender<Vec<u8>>,
+    pub outgoing_rx: mpsc::UnboundedReceiver<Vec<u8>>,
 }
 
 impl LibrenetSwarm {
-    pub async fn new(secret_key_seed: [u8; 32]) -> Result<Self, Box<dyn Error>> {
+    pub async fn new(
+        secret_key_seed: [u8; 32], 
+        incoming_tx: mpsc::UnboundedSender<Vec<u8>>,
+        outgoing_rx: mpsc::UnboundedReceiver<Vec<u8>>,
+    ) -> Result<Self, Box<dyn Error>> {
         let id_keys = libp2p::identity::Keypair::ed25519_from_bytes(secret_key_seed.to_vec())?;
         let peer_id = PeerId::from(id_keys.public());
-        tracing::info!("Local peer id: {:?}", peer_id);
 
         let mut swarm = libp2p::SwarmBuilder::with_existing_identity(id_keys)
             .with_tokio()
@@ -35,7 +40,9 @@ impl LibrenetSwarm {
             )?
             .with_behaviour(|key| {
                 let store = kad::store::MemoryStore::new(key.public().to_peer_id());
-                let kademlia = kad::Behaviour::new(key.public().to_peer_id(), store);
+                let mut kad_config = kad::Config::default();
+                kad_config.set_protocol_names(vec![libp2p::StreamProtocol::new("/librenet/kad/1.0.0")]);
+                let kademlia = kad::Behaviour::with_config(key.public().to_peer_id(), store, kad_config);
                 
                 let gossipsub_config = gossipsub::Config::default();
                 let gossipsub = gossipsub::Behaviour::new(
@@ -45,10 +52,13 @@ impl LibrenetSwarm {
 
                 LibrenetBehaviour { kademlia, gossipsub }
             })?
-            .with_swarm_config(|c| c.with_idle_connection_timeout(std::time::Duration::from_secs(60)))
             .build();
 
-        Ok(Self { swarm, peer_id })
+        // Subscribe to mesh topic
+        let topic = gossipsub::IdentTopic::new("librenet-mesh");
+        swarm.behaviour_mut().gossipsub.subscribe(&topic)?;
+
+        Ok(Self { swarm, peer_id, incoming_tx, outgoing_rx })
     }
 
     pub async fn listen(&mut self, addr: Multiaddr) -> Result<(), Box<dyn Error>> {
@@ -58,14 +68,24 @@ impl LibrenetSwarm {
 
     pub async fn run(mut self) {
         loop {
-            match self.swarm.select_next_some().await {
-                SwarmEvent::NewListenAddr { address, .. } => {
-                    tracing::info!("Listening on {:?}", address);
+            tokio::select! {
+                event = self.swarm.select_next_some() => {
+                    match event {
+                        SwarmEvent::NewListenAddr { address, .. } => {
+                            tracing::info!("Listening on {:?}", address);
+                        }
+                        SwarmEvent::Behaviour(LibrenetBehaviourEvent::Gossipsub(gossipsub::Event::Message { message, .. })) => {
+                            let _ = self.incoming_tx.send(message.data);
+                        }
+                        _ => {}
+                    }
                 }
-                SwarmEvent::Behaviour(event) => {
-                    tracing::debug!("Behaviour event: {:?}", event);
+                Some(outgoing) = self.outgoing_rx.recv() => {
+                    let topic = gossipsub::IdentTopic::new("librenet-mesh");
+                    if let Err(e) = self.swarm.behaviour_mut().gossipsub.publish(topic, outgoing) {
+                        tracing::error!("Failed to publish packet: {:?}", e);
+                    }
                 }
-                _ => {}
             }
         }
     }

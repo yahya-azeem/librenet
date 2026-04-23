@@ -2108,9 +2108,11 @@ dependencies = [
 name = "librenet-core-rs"
 version = "0.1.0"
 dependencies = [
+ "aes-gcm",
  "async-trait",
  "ed25519-dalek",
  "futures",
+ "hex",
  "libp2p",
  "rand 0.8.6",
  "serde",
