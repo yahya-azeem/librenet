@@ -99,6 +99,7 @@ To ensure Librenet is practical and high-performance, the following systems will
     *   Providing compute cycles for WASM/Native tasks.
     *   Successfully "Tasting the Soup" (verifying others).
 *   **Benefit**: High-reputation nodes receive faster response times and priority when requesting their own SaaS tasks.
+*   **Leech Protection (Dynamic Switching)**: To prevent nodes from becoming "leeches" when the compute kitchen is full (the "Too Many Chefs" cap), the daemon automatically shifts idle resources to **Storage Repair** (re-replicating shards that fall below the redundancy threshold) or **DHT Optimization**. Equity Credits are only awarded for active contribution to *any* layer of the stack.
 
 ### 4. Zero-Config Local Mesh
 *   **Mechanism**: Integration of `mDNS` for automatic neighbor discovery.
