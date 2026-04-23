@@ -1,9 +1,0 @@
-C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\futures_rustls-24fed7b630993b45.d: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\client.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\common\mod.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\common\handshake.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\server.rs
-
-C:\Users\shama\.gemini\antigravity\scratch\librenet\target\debug\deps\libfutures_rustls-24fed7b630993b45.rmeta: C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\lib.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\client.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\common\mod.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\common\handshake.rs C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\server.rs
-
-C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\lib.rs:
-C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\client.rs:
-C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\common\mod.rs:
-C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\common\handshake.rs:
-C:\Users\shama\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\futures-rustls-0.26.0\src\server.rs:
