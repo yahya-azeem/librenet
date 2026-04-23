@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "librenet-core-rs",
+    "librenet-tun",
+    "librenet-swarm",
+    "librenet-storage", "librenet-daemon",
+]
+resolver = "2"

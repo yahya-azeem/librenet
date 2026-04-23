@@ -1,0 +1,12 @@
+[package]
+name = "librenet-swarm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wasmtime = "16.0"
+tokio = { version = "1.0", features = ["full"] }
+tracing = "0.1"
+librenet-core-rs = { path = "../librenet-core-rs" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

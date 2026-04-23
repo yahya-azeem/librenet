@@ -1,0 +1,11 @@
+[package]
+name = "librenet-tun"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tun = { version = "0.6", features = ["async"] }
+tokio = { version = "1.0", features = ["full"] }
+futures = "0.3"
+tracing = "0.1"
+libc = "0.2"
