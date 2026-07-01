@@ -69,16 +69,19 @@ async fn main() -> Result<(), Box<dyn Error>> {
     tokio::spawn(async move {
         while let Some(data) = incoming_rx.recv().await {
             // Attempt to unwrap one layer of Garlic
-            match GarlicPacket::unwrap(&data, &node_key) {
-                Ok(inner_payload) => {
-                    if let Err(e) = tun_writer.write_all(&inner_payload).await {
-                        tracing::error!("Failed to write unwrapped packet to TUN: {:?}", e);
-                    }
-                }
+            let inner_payload = match GarlicPacket::unwrap(&data, &node_key) {
+                Ok(payload) => Some(payload),
                 Err(_) => {
                     // Packet not for me, or still has layers. 
                     // In a full routing impl, we would forward it here.
                     tracing::debug!("Received packet not decryptable with local key, skipping.");
+                    None
+                }
+            };
+            
+            if let Some(payload) = inner_payload {
+                if let Err(e) = tun_writer.write_all(&payload).await {
+                    tracing::error!("Failed to write unwrapped packet to TUN: {:?}", e);
                 }
             }
         }

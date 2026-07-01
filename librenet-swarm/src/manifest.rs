@@ -1,5 +1,12 @@
 use serde::{Deserialize, Serialize};
 
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
+pub enum VerificationMethod {
+    TeeAttestation,
+    TruebitDispute,
+    TraditionalRedundancy { factor: usize },
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AppManifest {
     pub name: String,
@@ -8,10 +15,10 @@ pub struct AppManifest {
     pub storage: StorageRequirements,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ComputeRequirements {
     pub wasm_cid: String,
-    pub redundancy: usize, // "Tasting the soup" factor
+    pub verification: VerificationMethod,
     pub needs_gpu: bool,
 }
 

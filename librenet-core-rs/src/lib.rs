@@ -7,11 +7,18 @@ use rand::RngCore;
 use libp2p::Multiaddr;
 use tokio::sync::mpsc;
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum NodeType {
+    Supernode,
+    OrdinaryNode,
+}
+
 /// Represents a peer's identity in the Librenet.
 #[derive(Debug, Clone)]
 pub struct PeerIdentity {
     pub signing_key: SigningKey,
     pub verifying_key: VerifyingKey,
+    pub node_type: NodeType,
 }
 
 impl PeerIdentity {
@@ -23,7 +30,14 @@ impl PeerIdentity {
         Self {
             signing_key,
             verifying_key,
+            node_type: NodeType::OrdinaryNode,
         }
+    }
+
+    pub fn new_with_type(node_type: NodeType) -> Self {
+        let mut identity = Self::generate();
+        identity.node_type = node_type;
+        identity
     }
 
     pub fn to_seed(&self) -> [u8; 32] {

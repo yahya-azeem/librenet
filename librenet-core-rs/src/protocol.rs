@@ -47,3 +47,25 @@ impl GarlicPacket {
         Ok(decrypted)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_garlic_wrap_unwrap_roundtrip() {
+        let payload = b"hello secrete message through the garlic nodes".to_vec();
+        let hop1 = [1u8; 32];
+        let hop2 = [2u8; 32];
+        let hop3 = [3u8; 32];
+        let hops = vec![hop1, hop2, hop3];
+
+        let wrapped = GarlicPacket::wrap(payload.clone(), hops);
+
+        let unwrapped1 = GarlicPacket::unwrap(&wrapped, &hop1).unwrap();
+        let unwrapped2 = GarlicPacket::unwrap(&unwrapped1, &hop2).unwrap();
+        let final_payload = GarlicPacket::unwrap(&unwrapped2, &hop3).unwrap();
+
+        assert_eq!(final_payload, payload);
+    }
+}

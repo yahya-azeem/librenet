@@ -1,3 +1,6 @@
+pub mod manifest;
+pub mod verification;
+
 use wasmtime::*;
 use std::error::Error;
 
